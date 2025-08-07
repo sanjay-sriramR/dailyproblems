@@ -1,0 +1,33 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class stringprob {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        char ch[] = new char[str.length()];
+        for(int i = 0 ; i < str.length() ; i++){
+            ch[i] = str.charAt(i);
+        }
+        int i = 0 ; 
+        int j = str.length() - 1;
+        while(i <= j){
+            if((ch[i] >= 'A' && ch[i] <= 'Z') || (ch[i] >= 'a' && ch[i] <='z')){
+                if((ch[j] >= 'A' && ch[j] <= 'Z') || (ch[j] >= 'a' && ch[j] <='z')){
+                    char c = ch[i];
+                    ch[i] = ch[j];
+                    ch[j] = c;
+                    i++;
+                    j--;
+                }
+                else{
+                    j--;
+                }
+            }
+            else{
+                i++;
+            }
+        }
+        System.out.println(Arrays.toString(chi)); 
+    }
+}
